@@ -46,6 +46,7 @@ public class OrderApplicationService {
     List<PublicId> publicIds = detailCartRequest.items().stream().map(DetailCartItemRequest::productId).toList();
     List<Product> productsInformation = productsApplicationService.getProductsByPublicIdsIn(publicIds);
     return cartReader.getDetails(productsInformation);
+  
   }
 
   @Transactional
